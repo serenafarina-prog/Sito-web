@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #1a202c;       /* Grigio scuro/antracite per il titolo principale */
+    --secondary-color: #2b6cb0;     /* Blu di accento per sottotitoli o elementi chiave */
+    --text-muted: #718096;          /* Grigio neutro per testi secondari o descrizioni */
+    --font-main: 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+.title-big{
+ font-size:2.5rem; 
+ font-weight: 800;
+ letter-spacing: -0.03em;
+ margin-bottom: 1rem 
+}

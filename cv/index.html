@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serena Farina | Curriculum</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv54RU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Tuo CSS personalizzato -->
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <link rel="icon" type="image/png" href="../assets/images/favicon SF.png">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navContainer = document.querySelector('.nav-container');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navContainer && navLinks) {
+            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'menu-toggle';
+            toggleBtn.setAttribute('aria-label', 'Menu');
+            toggleBtn.innerHTML = '<span></span><span></span><span></span>';
+            
+            navContainer.appendChild(toggleBtn);
+
+            // Al click apre/chiude il menu e trasforma le linee in "X"
+            toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('is-active');
+                navLinks.classList.toggle('is-open');
+            });
+        }
+    });
+</script>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Serena Farina</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../portfolio/index.html">Portfolio</a></li>
+                <li><a href="index.html" class="active">Curriculum</a></li>
+                <li><a href="../contacts/index.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content con griglia Bootstrap -->
+    <main class="cv-container container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                
+                <h1 class="mb-4">Curriculum</h1>
+
+                <div class="cv-layout">
+                    
+                    <!-- COLONNA SINISTRA: Info & Skills -->
+                    <aside class="cv-sidebar">
+                        
+                        <section class="cv-section">
+                            <h2 class="cv-section-title">Contatti</h2>
+                            <ul class="cv-contact-list">
+                                <li>Per contattarmi utilizza il form che trovi <a href="../contacts/index.html">QUI</a></li>
+                            </ul>
+                        </section>
+
+                        <section class="cv-section">
+                            <h2 class="cv-section-title">Competenze</h2>
+                            <ul class="cv-skill-list">
+                                <li>Progettazione d'Interni</li>
+                                <li>Lighting Design</li>
+                                <li>Modellazione 3D & Rendering</li>
+                                <li>Fotografia d'interni</li>
+                                <li>Direzione Artistica</li>
+                                <li>UX/UI Design</li>
+                            </ul>
+                        </section>
+
+                        <section class="cv-section">
+                            <h2 class="cv-section-title">Software</h2>
+                            <ul class="cv-skill-list">
+                                <li>AutoCAD</li>
+                                <li>Sketchup / V-Ray</li>
+                                <li>Pacchetto Adobe</li>
+                                <li>VS Code</li>
+                            </ul>
+                        </section>
+
+                        <section class="cv-section">
+                            <h2 class="cv-section-title">Lingue</h2>
+                            <ul class="cv-contact-list">
+                                <li>Italiano — Madrelingua</li>
+                                <li>Inglese — Professionale</li>
+                            </ul>
+                        </section>
+
+                    </aside>
+
+                    <!-- COLONNA DESTRA: Esperienze & Formazione -->
+                    <div class="cv-main-content">
+                        
+                        <section class="cv-section">
+                            <h2 class="cv-section-title">Esperienze Professionali</h2>
+                            
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Interior Designer & Photographer</h3>
+                                    <span class="cv-item-date">2023 — Presente</span>
+                                </div>
+                                <p class="cv-item-company">Freelance</p>
+                                <p class="cv-item-desc">Progettazione di spazi residenziali privati, lighting design personalizzato e servizi fotografici per vari studi di interni.</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Interior Designer</h3>
+                                    <span class="cv-item-date">2022 — 2023</span>
+                                </div>
+                                <p class="cv-item-company">Soul Kitchen / Manuela Demo Interiors</p>
+                                <p class="cv-item-desc">Progettazione di spazi privati e vendita arredo. <br> Gestione dei rapporti con i fornitori, maestranze e cantiere.</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Interior Designer & Rendering</h3>
+                                    <span class="cv-item-date">2021 — 2022</span>
+                                </div>
+                                <p class="cv-item-company">Isidoro Mastronardi Studio di Architettura</p>
+                                <p class="cv-item-desc">Progettazione di spazi pubblici, modellazione 3D e rendering per progetti internazionali.</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Junior marketing and sales</h3>
+                                    <span class="cv-item-date">2020 — 2021</span>
+                                </div>
+                                <p class="cv-item-company">Industria Cono Artic</p>
+                                <p class="cv-item-desc">Assistenza alla ricerca di mercato per lancio di nuovi prodotti, creazione contenuti social e materiale grafico.</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Interior Designer</h3>
+                                    <span class="cv-item-date">2019 — 2020</span>
+                                </div>
+                                <p class="cv-item-company">NH Hotel Congress Lingotto / DoubleTree by Hilton Lingotto</p>
+                                <p class="cv-item-desc">Progettazione spazi interni all'hotel, creazione materiale grafico e fotografico, contenuti social, allestimento per eventi.</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Video producer</h3>
+                                    <span class="cv-item-date">2018 — 2019</span>
+                                </div>
+                                <p class="cv-item-company">Centro congressi Unione Industriale di Torino</p>
+                                <p class="cv-item-desc">Videomaker durante gli eventi pubblici, creazione di materiale fotografico.</p>
+                            </div>
+
+                        </section>
+
+                        <section class="cv-section">
+                            <h2 class="cv-section-title">Formazione</h2>
+                            
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Master in UX/UI Design e Agenti AI</h3>
+                                    <span class="cv-item-date">2026</span>
+                                </div>
+                                <p class="cv-item-company">Start2Impact</p>
+                            </div>
+
+                            <div class="cv-item">
+                                <div class="cv-item-header">
+                                    <h3 class="cv-item-role">Laurea in Interior Design</h3>
+                                    <span class="cv-item-date">2019</span>
+                                </div>
+                                <p class="cv-item-company">IED Torino</p>
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

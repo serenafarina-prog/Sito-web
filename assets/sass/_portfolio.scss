@@ -1,0 +1,539 @@
+/* ==========================================================================
+   PAGINA PORTFOLIO (SPLIT SCREEN)
+   ========================================================================== */
+
+/* Blocca lo scroll del body nella pagina portfolio per avere tutto a schermo */
+body.portfolio-home {
+    overflow: hidden;
+    height: 100dvh;
+    margin: 0;
+}
+
+.portfolio-split-container {
+    display: flex;
+    /* Spingiamo il contenitore sotto l'header fisso invece di usare calcoli strani */
+    margin-top: 96px; 
+    height: calc(100dvh - 96px); 
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+}
+
+.split-block {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    /* Usiamo flex-basis e flex-grow nella transizione per evitare scatti bruschi */
+    transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border-right: 2px solid var(--bg-color);
+
+    &:last-child {
+        border-right: none;
+    }
+
+    &:hover {
+        flex: 1.15;
+
+        .block-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .block-link {
+            border-color: rgba(255,255,255,1);
+        }
+    }
+}
+
+/* Sfondi delle sezioni principali */
+.interior-block {
+    background-image: url('../images/cover/interior-cover.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.photography-block {
+    background-image: url('../images/cover/photo-cover.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.block-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 70%);
+    transition: background 0.4s ease;
+    z-index: 1;
+}
+
+.block-content {
+    position: relative;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.block-category {
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.block-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+    color: var(--bg-color);
+}
+
+.block-link {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 4px;
+    transition: border-color 0.3s ease;
+    color: var(--bg-color);
+}
+
+
+/* ==========================================================================
+   PAGINE INTERNE PORTFOLIO (Interior / Fotografia)
+   ========================================================================== */
+
+.internal-portfolio-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 160px 5% 80px 5%;
+}
+
+.page-intro {
+    max-width: 700px;
+    margin-bottom: 80px;
+}
+
+.category-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.page-main-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.page-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* GRIGLIA PROGETTI */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    width: 100%;
+    align-items: flex-start;
+
+    .project-card {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        &.card-small {
+            flex: 0 0 calc(50% - 1.25rem);
+            width: calc(50% - 1.25rem);
+            max-width: calc(50% - 1.25rem);
+
+            .project-image-wrapper {
+                aspect-ratio: 3 / 2;
+            }
+        }
+
+        &.card-large {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+
+            .project-image-wrapper {
+                aspect-ratio: 21 / 9;
+                max-height: 48vh;
+            }
+        }
+
+        &:hover .project-img {
+            transform: scale(1.03);
+        }
+    }
+
+    .project-card-link {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .project-image-wrapper {
+        width: 100%;
+        overflow: hidden;
+        background-color: #eaeaea;
+        margin-bottom: 1rem;
+    }
+
+    .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .project-info {
+        padding-top: 5px;
+    }
+
+    .project-year {
+        font-size: 0.8rem;
+        color: var(--accent-color);
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        letter-spacing: -0.01em;
+    }
+
+    .project-tech {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        font-weight: 300;
+    }
+}
+
+
+/* ==========================================================================
+   PAGINA PROGETTI SINGOLI & GALLERIA
+   ========================================================================== */
+
+.project-detail-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 140px 1.5rem 2rem 1.5rem;
+
+    .project-detail-header {
+        margin-bottom: 3.5rem;
+    }
+
+    .project-title {
+        font-size: 2.2rem;
+        color: #111111;
+        margin: 0.5rem 0;
+    }
+
+    .project-subtitle {
+        color: #666666;
+        font-size: 1rem;
+    }
+}
+
+.project-gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.gallery-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2.5rem;
+    align-items: stretch;
+    position: relative;
+
+    > div,
+    .img-horizontal,
+    .img-vertical {
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    img,
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Variazioni della Galleria */
+    &.full {
+        width: 100%;
+        img, video { aspect-ratio: 3 / 2; }
+    }
+
+    &.double-horizontal {
+        .img-horizontal { flex: 1 1 0; }
+        .img-horizontal img, .img-horizontal video { aspect-ratio: 3 / 2; }
+    }
+
+    &.double-vertical {
+        .img-vertical { flex: 1 1 0; }
+        .img-vertical img, .img-vertical video { aspect-ratio: 2 / 3; }
+    }
+
+    &.triple-vertical {
+        gap: 1.5rem;
+        .img-vertical { flex: 1 1 0; }
+        .img-vertical img, .img-vertical video { aspect-ratio: 2 / 3; }
+    }
+
+    &.triple-horizontal {
+        gap: 1.5rem;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+
+        .img-horizontal { flex: 1 1 0; }
+        .img-horizontal img, .img-horizontal video { aspect-ratio: 16 / 10; }
+    }
+
+    &.quad-vertical-full {
+        gap: 1.25rem;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        box-sizing: border-box;
+        padding: 0 1.5rem;
+
+        .img-vertical { flex: 1 1 0; }
+        .img-vertical img, .img-vertical video { aspect-ratio: 2 / 3; }
+    }
+
+    &.mixed {
+        gap: 2.5rem;
+
+        &.mixed-left {
+            .img-horizontal { flex: 1 1 0; margin-left: calc(-50vw + 50%); }
+            .img-vertical { flex: 0 0 42%; width: 42%; }
+        }
+
+        &.mixed-right {
+            .img-vertical { flex: 0 0 42%; width: 42%; }
+            .img-horizontal { flex: 1 1 0; margin-right: calc(-50vw + 50%); }
+        }
+
+        .img-horizontal img, .img-horizontal video {
+            aspect-ratio: 16 / 10;
+            object-position: center;
+        }
+        .img-vertical img, .img-vertical video {
+            aspect-ratio: 2 / 3;
+        }
+    }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE PORTFOLIO (MOBILE)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+.portfolio-split-container {
+        margin-top: 96px;
+        height: calc(100dvh - 96px); // Usa l'altezza dinamica reale dello schermo mobile
+        flex-direction: column;
+    }
+
+    .split-block {
+        flex: 1; // Si dividono esattamente al 50% lo spazio disponibile
+        height: 50%;
+        padding: 40px;
+        border-right: none;
+        border-bottom: 2px solid var(--bg-color);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            flex: 1;
+        }
+
+        .block-category {
+            margin-bottom: 2px;
+            line-height: 2.2;
+        }
+        
+        .block-title {
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+    }
+
+    .block-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        .project-card {
+            &.card-small,
+            &.card-large {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .project-image-wrapper {
+                width: 100%;
+                height: 220px;
+                aspect-ratio: unset;
+                max-height: 220px;
+            }
+
+            .project-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    .gallery-row {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+
+        &.mixed,
+        &.double-vertical,
+        &.double-horizontal,
+        &.triple-vertical {
+            flex-direction: column;
+            height: auto;
+            gap: 1.5rem;
+        }
+
+        &.full img,
+        &.mixed .img-horizontal img,
+        &.double-horizontal .img-horizontal img {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+        }
+
+        &.mixed .img-vertical img,
+        &.double-vertical .img-vertical img,
+        &.triple-vertical .img-vertical img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+        }
+
+        &.mixed.mixed-left .img-horizontal,
+        &.mixed.mixed-right .img-horizontal {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        &.mixed.mixed-left .img-horizontal,
+        &.mixed.mixed-right .img-horizontal,
+        &.triple-horizontal,
+        &.quad-vertical-full {
+            width: 100%;
+            left: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 0;
+        }
+
+        &.mixed.mixed-left .img-vertical,
+        &.mixed.mixed-right .img-vertical {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+
+        &.triple-horizontal .img-horizontal img,
+        &.triple-horizontal .img-horizontal video {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+        }
+    }
+}
+
+
+
+
+.back-button-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    
+    width: 100%;
+    margin-top: 6rem;
+    margin-bottom: 0;
+    
+    /* Spaziatura iniziale per il testo */
+    padding: 0.8rem 1.5rem;
+    
+    /* Sfondo trasparente opaco con effetto blur */
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.back-btn {
+    position: static;
+    display: inline-block;
+    color: var(--text-main, #111);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    padding: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+        transform: none;
+    }
+}

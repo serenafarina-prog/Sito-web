@@ -1,0 +1,87 @@
+@use 'variables';
+@use 'header';
+@use 'components';
+@use 'home';
+@use 'portfolio';
+@use 'cv';
+@use 'contacts';
+
+
+
+html {
+    scrollbar-gutter: stable;
+} 
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-main); /* Usa il grigio scuro antracite (#333333) ovunque */
+    font-weight: 700;        /* O il peso che preferisci mantenere */
+    margin-top: 0;
+}
+
+.main-header + main h1,
+main h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+/* Contenitore per centrare e staccare il pulsante */
+.back-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    margin-top: 5rem;        /* Distanza abbondante dalle foto sopra */
+    margin-bottom: 3rem;     /* Spazio dal fondo pagina */
+}
+
+/* Stile del pulsante (se desideri pulire anche il bordo/aspetto) */
+.back-btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    color: #111111;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    opacity: 0.6;
+}
+
+
+
+
+
+

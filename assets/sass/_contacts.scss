@@ -1,0 +1,149 @@
+/* ==========================================================================
+   PAGINA CONTATTI
+   ========================================================================== */
+
+.contatti-page {
+    width: 100%;
+    color: var(--text-main);
+      }
+
+    .contatti-wrapper {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 160px 2rem 80px 2rem;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #111111;
+        margin-bottom: 1rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        color: #555555;
+        margin-bottom: 3.5rem;
+    }
+
+    /* Griglia a due colonne stabile */
+    .contatti-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 5rem;
+    }
+
+    /* Colonna sinistra */
+    .contatti-sidebar {
+        flex: 0 0 280px;
+
+        h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #111111;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+    }
+
+    .social-link {
+        color: #111111;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    /* Colonna destra (Form) */
+    .contatti-form-section {
+        flex: 1;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+            margin-bottom: 0.4rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #d1d1d1;
+            border-radius: 0;
+            padding: 0.5rem 0;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: transparent;
+            outline: none;
+            box-sizing: border-box;
+
+            &::placeholder {
+            color: var(--oliva);
+            opacity: 1;
+        } 
+
+            &:focus {
+                border-bottom-color: #111111;
+            }
+        }
+    }
+
+    /* Pulsante */
+.btn-minimal {
+        background-color: transparent;
+        color: var(--text-main);
+        border: 1px solid var(--text-main);
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border: 1px solid var(--text-main);
+            background-color: var(--oliva);
+            color: #000000;
+        }
+    }
+
+/* Responsive Contatti */
+@media screen and (max-width: 768px) {
+    .contatti-page {
+        .contatti-wrapper {
+            padding-top: 130px;
+        }
+
+        .contatti-grid {
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .contatti-sidebar {
+            flex: 1 1 100%;
+            width: 100%;
+        }
+    }
+}

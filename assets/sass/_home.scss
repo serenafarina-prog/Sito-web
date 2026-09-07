@@ -1,0 +1,88 @@
+/* ==========================================================================
+   HOMEPAGE
+   ========================================================================== */
+
+
+
+body.home-locked {
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sezione Hero principale */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/moodboard SF.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:100vh;
+    display: flex;
+    align-items: flex-start;   // Riportiamo l'allineamento in alto
+    padding-top: 60vh;       
+    padding-left: 8%;
+    box-sizing: border-box;
+    margin: 0;
+
+    /* Stili interni nidificati per i testi della Hero */
+    .title-big {
+        color: var(--bg-color);
+        font-size: 3.5rem;
+        font-weight: 300;
+        line-height: 1.15;
+        letter-spacing: 0.1em;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        color: var(--bg-color);
+        font-size: 1.2rem;
+        font-weight: 100;
+        margin-bottom: 2rem;
+    }
+
+    .btn-minimal {
+        color: var(--bg-color);
+        border: 1px solid var(--bg-color);
+        display: inline-block;
+        padding: 12px 24px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: var(--oliva);
+            color: #000000;
+        }
+    }
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MOBILE (HOME)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 400px; // <-- Dà lo spazio giusto sotto l'header fisso su mobile
+        padding-right: 5%;
+        padding-bottom: 0;
+        padding-left: 5%;
+
+        .title-big { 
+            font-size: 2.2rem; 
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem; 
+        }
+    }
+
+    .logo a {
+        font-size: 1.1rem; 
+    }
+}

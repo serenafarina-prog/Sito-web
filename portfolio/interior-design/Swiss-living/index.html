@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiss living | Interior Design</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../../../assets/images/favicon SF.png">
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navContainer = document.querySelector('.nav-container');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navContainer && navLinks) {
+            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'menu-toggle';
+            toggleBtn.setAttribute('aria-label', 'Menu');
+            toggleBtn.innerHTML = '<span></span><span></span><span></span>';
+            
+            navContainer.appendChild(toggleBtn);
+
+            // Al click apre/chiude il menu e trasforma le linee in "X"
+            toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('is-active');
+                navLinks.classList.toggle('is-open');
+            });
+        }
+    });
+</script>
+
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../../../index.html">Serena Farina</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../index.html" class="active">Portfolio</a></li>
+                <li><a href="../../../cv/index.html">Curriculum</a></li>
+                <li><a href="../../../contacts/index.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-detail-container">
+        
+        <!-- Intestazione Progetto -->
+        <header class="project-detail-header">
+            <h1 class="project-title">Swiss living</h1>
+            <p class="project-subtitle">Svizzera - 2026</p>
+            <p class="project-description">Progettazione d'interni per ingresso e living.</p>
+        </header>
+
+        <!-- Galleria Immagini del Progetto -->
+        <section class="project-gallery">
+
+            <!-- DOPPIA ORIZZONTALE -->            
+            <div class="gallery-row double-horizontal">
+              <div class="img-horizontal">
+                  <img src="../../../assets/images/Interior/Swiss living/Swiss living - 6.jpg" alt="Swiss living - Immagine 6" loading="lazy">
+              </div>
+              <div class="img-horizontal">
+                  <img src="../../../assets/images/Interior/Swiss living/Swiss living - 7.jpg" alt="Swiss living - Immagine 7" loading="lazy">
+              </div>
+            </div>
+           
+            <!-- Foto Orizzontale -->
+            <div class="gallery-row full">
+                <img src="../../../assets/images/Interior/Swiss living/Swiss living - 5.jpg" alt="Swiss living - Immagine 5" loading="lazy">
+            </div>
+
+            <!-- Foto Orizzontale -->
+            <div class="gallery-row full">
+                <img src="../../../assets/images/Interior/Swiss living/Swiss living - 1.jpg" alt="Swiss living - Immagine 1" loading="lazy">
+            </div>
+
+            <!-- Foto Orizzontale -->
+            <div class="gallery-row full">
+                <img src="../../../assets/images/Interior/Swiss living/Swiss living - 2.jpg" alt="Swiss living - Immagine 2" loading="lazy">
+            </div>
+
+            <!-- Foto Orizzontale -->
+            <div class="gallery-row full">
+                <img src="../../../assets/images/Interior/Swiss living/Swiss living - 3.jpg" alt="Swiss living - Immagine 3" loading="lazy">
+            </div>
+
+            <!-- Foto Orizzontale -->
+            <div class="gallery-row full">
+                <img src="../../../assets/images/Interior/Swiss living/Swiss living - 4.jpg" alt="Swiss living - Immagine 4" loading="lazy">
+            </div>
+
+        </section> <!-- Fine di .project-gallery -->
+
+
+    </main>
+
+                <!-- Contenitore del pulsante torna indietro -->
+        <div class="back-button-container">
+            <a href="../index.html" class="back-btn">← TORNA AI PROGETTI DI INTERIOR DESIGN</a>
+        </div>
+
+
+</body>
+</html>

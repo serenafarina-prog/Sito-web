@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serena Farina | Contatti</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS CDN (Richiesto dal master) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv54RU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Tuo CSS personalizzato (Caricato DOPO per sovrascrivere Bootstrap) -->
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+    <link rel="icon" type="image/png" href="../assets/images/favicon SF.png">
+    
+    <!-- SDK EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("L4cNc-t4nWU4FieQC");
+       })();
+    </script>
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navContainer = document.querySelector('.nav-container');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navContainer && navLinks) {
+            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'menu-toggle';
+            toggleBtn.setAttribute('aria-label', 'Menu');
+            toggleBtn.innerHTML = '<span></span><span></span><span></span>';
+            
+            navContainer.appendChild(toggleBtn);
+
+            // Al click apre/chiude il menu e trasforma le linee in "X"
+            toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('is-active');
+                navLinks.classList.toggle('is-open');
+            });
+        }
+    });
+</script>
+
+<body>
+
+    <!-- Navigazione Principale -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="../index.html">Serena Farina</a>
+            </div>
+            <ul class="nav-links">
+               <li><a href="../index.html">Home</a></li>
+               <li><a href="../portfolio/index.html">Portfolio</a></li>
+               <li><a href="../cv/index.html">Curriculum</a></li>
+               <li><a href="index.html" class="active">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main class="contatti-page container py-5">
+    <div class="contatti-wrapper">
+        <h1>Contatti</h1>
+        <p class="intro-text">Per richieste di collaborazione, informazioni sui progetti o servizi fotografici, compila il form e verrai ricontattato.</p>
+        
+        <!-- Usiamo la griglia Bootstrap ma manteniamo le tue classi custom per il layout -->
+        <div class="row g-5 contatti-grid">
+            
+            <!-- Colonna Sinistra -->
+            <aside class="col-lg-4 contatti-sidebar">
+                <div class="info-block">
+                    <h2>Location</h2>
+                    <p>Torino e dintorni per progetti in presenza.<br>Ovunque con progettazione online.</p>
+                </div>
+                <div class="info-block">
+                    <h2>Social</h2>
+                    <p><a href="#" class="social-link">LinkedIn</a></p>
+                </div>
+            </aside>
+
+            <!-- Colonna Destra (Form con le tue classi originali, senza form-control di Bootstrap) -->
+            <section class="col-lg-8 contatti-form-section">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nome">Nome e Cognome *</label>
+                        <input type="text" id="nome" name="from_name" placeholder="Es. Mario Rossi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="reply_to" placeholder="Es. mario.rossi@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="oggetto">Oggetto</label>
+                        <input type="text" id="oggetto" name="subject" placeholder="Es. Informazioni Progetto Residenziale">
+                    </div>
+                    <div class="form-group">
+                        <label for="messaggio">Messaggio *</label>
+                        <textarea id="messaggio" name="message" rows="4" placeholder="Racconta brevemente il tuo progetto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-minimal">Invia messaggio →</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+    <!-- Script EmailJS -->
+    <script>
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm('service_t8q3zux', 'template_5c9agn6', this)
+                .then(function() {
+                    alert('Messaggio inviato con successo!');
+                    contactForm.reset();
+                }, function(error) {
+                    alert('Si è verificato un errore durante l\'invio: ' + JSON.stringify(error));
+                });
+        });
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -40,8 +40,8 @@ a {
 
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--text-main); /* Usa il grigio scuro antracite (#333333) ovunque */
-    font-weight: 700;        /* O il peso che preferisci mantenere */
+    color: var(--text-main);
+    font-weight: 700;        
     margin-top: 0;
 }
 
@@ -56,16 +56,16 @@ main h1 {
     margin-bottom: 1.5rem;
 }
 
-/* Contenitore per centrare e staccare il pulsante */
+
 .back-button-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centra orizzontalmente */
-    margin-top: 5rem;        /* Distanza abbondante dalle foto sopra */
-    margin-bottom: 3rem;     /* Spazio dal fondo pagina */
+    justify-content: center; 
+    margin-top: 5rem;        
+    margin-bottom: 3rem;     
 }
 
-/* Stile del pulsante (se desideri pulire anche il bordo/aspetto) */
+
 .back-btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;

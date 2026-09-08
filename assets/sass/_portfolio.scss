@@ -1,8 +1,4 @@
-/* ==========================================================================
-   PAGINA PORTFOLIO (SPLIT SCREEN)
-   ========================================================================== */
 
-/* Blocca lo scroll del body nella pagina portfolio per avere tutto a schermo */
 body.portfolio-home {
     overflow: hidden;
     height: 100dvh;
@@ -11,7 +7,6 @@ body.portfolio-home {
 
 .portfolio-split-container {
     display: flex;
-    /* Spingiamo il contenitore sotto l'header fisso invece di usare calcoli strani */
     margin-top: 96px; 
     height: calc(100dvh - 96px); 
     width: 100%;
@@ -27,7 +22,6 @@ body.portfolio-home {
     padding: 60px;
     overflow: hidden;
     background-color: #f0f0f0;
-    /* Usiamo flex-basis e flex-grow nella transizione per evitare scatti bruschi */
     transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     border-right: 2px solid var(--bg-color);
 
@@ -48,7 +42,7 @@ body.portfolio-home {
     }
 }
 
-/* Sfondi delle sezioni principali */
+
 .interior-block {
     background-image: url('../images/Cover/interior-cover.jpg'); 
     background-size: cover;
@@ -106,9 +100,8 @@ body.portfolio-home {
 }
 
 
-/* ==========================================================================
-   PAGINE INTERNE PORTFOLIO (Interior / Fotografia)
-   ========================================================================== */
+
+
 
 .internal-portfolio-container {
     max-width: 1400px;
@@ -146,7 +139,9 @@ body.portfolio-home {
     line-height: 1.6;
 }
 
-/* GRIGLIA PROGETTI */
+
+
+
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -235,9 +230,7 @@ body.portfolio-home {
 }
 
 
-/* ==========================================================================
-   PAGINA PROGETTI SINGOLI & GALLERIA
-   ========================================================================== */
+
 
 .project-detail-container {
     max-width: 1050px;
@@ -291,7 +284,7 @@ body.portfolio-home {
         display: block;
     }
 
-    /* Variazioni della Galleria */
+
     &.full {
         width: 100%;
         img, video { aspect-ratio: 3 / 2; }
@@ -367,20 +360,20 @@ body.portfolio-home {
 }
 
 
-/* ==========================================================================
-   RESPONSIVE PORTFOLIO (MOBILE)
-   ========================================================================== */
+
+
+
 
 @media (max-width: 768px) {
 
 .portfolio-split-container {
         margin-top: 96px;
-        height: calc(100dvh - 96px); // Usa l'altezza dinamica reale dello schermo mobile
+        height: calc(100dvh - 96px);
         flex-direction: column;
     }
 
     .split-block {
-        flex: 1; // Si dividono esattamente al 50% lo spazio disponibile
+        flex: 1; 
         height: 50%;
         padding: 40px;
         border-right: none;
@@ -505,10 +498,10 @@ body.portfolio-home {
     margin-top: 6rem;
     margin-bottom: 0;
     
-    /* Spaziatura iniziale per il testo */
+
     padding: 0.8rem 1.5rem;
     
-    /* Sfondo trasparente opaco con effetto blur */
+
     background-color: transparent;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(12px);

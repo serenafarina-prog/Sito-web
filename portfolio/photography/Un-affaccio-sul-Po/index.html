@@ -16,7 +16,7 @@
         const navLinks = document.querySelector('.nav-links');
 
         if (navContainer && navLinks) {
-            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
+
             const toggleBtn = document.createElement('button');
             toggleBtn.className = 'menu-toggle';
             toggleBtn.setAttribute('aria-label', 'Menu');
@@ -24,7 +24,7 @@
             
             navContainer.appendChild(toggleBtn);
 
-            // Al click apre/chiude il menu e trasforma le linee in "X"
+
             toggleBtn.addEventListener('click', () => {
                 toggleBtn.classList.toggle('is-active');
                 navLinks.classList.toggle('is-open');
@@ -50,7 +50,7 @@
 
     <main class="project-detail-container">
         
-        <!-- Intestazione Progetto -->
+
         <header class="project-detail-header">
             <h1 class="project-title">Un affaccio sul Po</h1>
             <p class="project-subtitle">Torino — 2025</p>
@@ -148,8 +148,7 @@
                 </div>
             </div>
 
-        </section> <!-- Fine di .project-gallery -->
-
+        </section>
     </main>
 
                 <!-- Contenitore del pulsante torna indietro -->

@@ -16,7 +16,7 @@
         const navLinks = document.querySelector('.nav-links');
 
         if (navContainer && navLinks) {
-            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
+
             const toggleBtn = document.createElement('button');
             toggleBtn.className = 'menu-toggle';
             toggleBtn.setAttribute('aria-label', 'Menu');
@@ -24,7 +24,7 @@
             
             navContainer.appendChild(toggleBtn);
 
-            // Al click apre/chiude il menu e trasforma le linee in "X"
+
             toggleBtn.addEventListener('click', () => {
                 toggleBtn.classList.toggle('is-active');
                 navLinks.classList.toggle('is-open');
@@ -96,7 +96,7 @@
                 <img src="../../../assets/images/Interior/Swiss living/Swiss living - 4.jpg" alt="Swiss living - Immagine 4" loading="lazy">
             </div>
 
-        </section> <!-- Fine di .project-gallery -->
+        </section> 
 
 
     </main>

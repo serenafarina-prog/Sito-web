@@ -7,14 +7,14 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS CDN (Richiesto dal master) -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv54RU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Tuo CSS personalizzato (Caricato DOPO per sovrascrivere Bootstrap) -->
     <link rel="stylesheet" href="../assets/css/style.css"> 
     <link rel="icon" type="image/png" href="../assets/images/favicon SF.png">
     
-    <!-- SDK EmailJS -->
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
@@ -29,7 +29,7 @@
         const navLinks = document.querySelector('.nav-links');
 
         if (navContainer && navLinks) {
-            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
+
             const toggleBtn = document.createElement('button');
             toggleBtn.className = 'menu-toggle';
             toggleBtn.setAttribute('aria-label', 'Menu');
@@ -37,7 +37,7 @@
             
             navContainer.appendChild(toggleBtn);
 
-            // Al click apre/chiude il menu e trasforma le linee in "X"
+
             toggleBtn.addEventListener('click', () => {
                 toggleBtn.classList.toggle('is-active');
                 navLinks.classList.toggle('is-open');
@@ -68,7 +68,7 @@
         <h1>Contatti</h1>
         <p class="intro-text">Per richieste di collaborazione, informazioni sui progetti o servizi fotografici, compila il form e verrai ricontattato.</p>
         
-        <!-- Usiamo la griglia Bootstrap ma manteniamo le tue classi custom per il layout -->
+
         <div class="row g-5 contatti-grid">
             
             <!-- Colonna Sinistra -->
@@ -83,7 +83,7 @@
                 </div>
             </aside>
 
-            <!-- Colonna Destra (Form con le tue classi originali, senza form-control di Bootstrap) -->
+
             <section class="col-lg-8 contatti-form-section">
                 <form id="contact-form">
                     <div class="form-group">
@@ -110,7 +110,7 @@
     </div>
 </main>
 
-    <!-- Script EmailJS -->
+
     <script>
         const contactForm = document.getElementById('contact-form');
 
@@ -127,7 +127,7 @@
         });
     </script>
 
-    <!-- Bootstrap JS Bundle -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

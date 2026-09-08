@@ -1,16 +1,13 @@
 :root {
-  --bg-color: #F7F5f0; /* Sfondo morbido quasi bianco */
-  --text-main: #333333; /* Testo antracite per massima eleganza */
-  --text-muted: #555555; /* Grigio per i testi secondari e paragrafi */
-  --accent-color: #9e876e; /* Colore sabbia di accento */
+  --bg-color: #F7F5f0; /* Sfondo */
+  --text-main: #333333; /* Testo principale */
+  --text-muted: #555555; /* Testi didascalici */
+  --accent-color: #9e876e; /* Testi di accento */
   --font-main: 'Helvetica Neue', Arial, sans-serif;
   --terracotta: #cd826b;
   --oliva: #99a79b;
 }
 
-/* ==========================================================================
-   HEADER / NAVBAR (Desktop intatto)
-   ========================================================================== */
 .main-header {
   width: 100%;
   padding: 30px 10%;
@@ -67,19 +64,14 @@
   color: #FFFFFF;
 }
 
-/* Pulsante nascosto su desktop */
 .menu-toggle {
   display: none;
 }
 
-/* ==========================================================================
-   VERSIONE MOBILE (sotto i 768px)
-   ========================================================================== */
 @media (max-width: 768px) {
   .main-header {
     padding: 20px 5%;
   }
-  /* Qui disegniamo il bottone con le 3 linee orizzontali */
   .menu-toggle {
     display: flex;
     flex-direction: column;
@@ -91,7 +83,6 @@
     cursor: pointer;
     padding: 0;
     z-index: 1001;
-    /* Queste sono le 3 linee orizzontali */
   }
   .menu-toggle span {
     display: block;
@@ -99,9 +90,6 @@
     height: 2px;
     background-color: #F7F5F0;
     transition: all 0.3s ease;
-  }
-  .menu-toggle {
-    /* Effetto: le 3 linee diventano una "X" quando clicchi per aprire */
   }
   .menu-toggle.is-active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -112,7 +100,6 @@
   .menu-toggle.is-active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-  /* I link che compaiono a tendina sotto l'header */
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -130,9 +117,6 @@
   }
   .nav-links a {
     font-size: 1.1rem;
-  }
-  .nav-links {
-    /* Quando il menu si apre */
   }
   .nav-links.is-active, .nav-links.is-open {
     max-height: 250px;
@@ -159,16 +143,12 @@
   color: #000000;
 }
 
-/* ==========================================================================
-   HOMEPAGE
-   ========================================================================== */
 body.home-locked {
   overflow: hidden;
   height: 100vh;
   margin: 0;
 }
 
-/* Sezione Hero principale */
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/moodboard SF.png");
   background-size: cover;
@@ -181,7 +161,6 @@ body.home-locked {
   padding-left: 8%;
   box-sizing: border-box;
   margin: 0;
-  /* Stili interni nidificati per i testi della Hero */
 }
 .hero-section .title-big {
   color: var(--bg-color);
@@ -217,9 +196,6 @@ body.home-locked {
   max-width: 650px;
 }
 
-/* --------------------------------------------------------------------------
-   RESPONSIVE MOBILE (HOME)
-   -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
   .hero-section {
     padding-top: 400px;
@@ -237,10 +213,6 @@ body.home-locked {
     font-size: 1.1rem;
   }
 }
-/* ==========================================================================
-   PAGINA PORTFOLIO (SPLIT SCREEN)
-   ========================================================================== */
-/* Blocca lo scroll del body nella pagina portfolio per avere tutto a schermo */
 body.portfolio-home {
   overflow: hidden;
   height: 100dvh;
@@ -249,7 +221,6 @@ body.portfolio-home {
 
 .portfolio-split-container {
   display: flex;
-  /* Spingiamo il contenitore sotto l'header fisso invece di usare calcoli strani */
   margin-top: 96px;
   height: calc(100dvh - 96px);
   width: 100%;
@@ -265,7 +236,6 @@ body.portfolio-home {
   padding: 60px;
   overflow: hidden;
   background-color: #f0f0f0;
-  /* Usiamo flex-basis e flex-grow nella transizione per evitare scatti bruschi */
   transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   border-right: 2px solid var(--bg-color);
 }
@@ -282,7 +252,6 @@ body.portfolio-home {
   border-color: rgb(255, 255, 255);
 }
 
-/* Sfondi delle sezioni principali */
 .interior-block {
   background-image: url("../images/Cover/interior-cover.jpg");
   background-size: cover;
@@ -339,9 +308,6 @@ body.portfolio-home {
   color: var(--bg-color);
 }
 
-/* ==========================================================================
-   PAGINE INTERNE PORTFOLIO (Interior / Fotografia)
-   ========================================================================== */
 .internal-portfolio-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -378,7 +344,6 @@ body.portfolio-home {
   line-height: 1.6;
 }
 
-/* GRIGLIA PROGETTI */
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
@@ -455,9 +420,6 @@ body.portfolio-home {
   font-weight: 300;
 }
 
-/* ==========================================================================
-   PAGINA PROGETTI SINGOLI & GALLERIA
-   ========================================================================== */
 .project-detail-container {
   max-width: 1050px;
   margin: 0 auto;
@@ -505,9 +467,6 @@ body.portfolio-home {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
-}
-.gallery-row {
-  /* Variazioni della Galleria */
 }
 .gallery-row.full {
   width: 100%;
@@ -598,9 +557,6 @@ body.portfolio-home {
   aspect-ratio: 2/3;
 }
 
-/* ==========================================================================
-   RESPONSIVE PORTFOLIO (MOBILE)
-   ========================================================================== */
 @media (max-width: 768px) {
   .portfolio-split-container {
     margin-top: 96px;
@@ -695,9 +651,7 @@ body.portfolio-home {
   width: 100%;
   margin-top: 6rem;
   margin-bottom: 0;
-  /* Spaziatura iniziale per il testo */
   padding: 0.8rem 1.5rem;
-  /* Sfondo trasparente opaco con effetto blur */
   background-color: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(12px);
@@ -729,7 +683,6 @@ main.cv-container {
   margin: 0 auto;
   padding: 160px 2rem 80px 2rem;
   box-sizing: border-box;
-  /* Header della Pagina */
 }
 main.cv-container .cv-header {
   margin-bottom: 3.5rem;
@@ -739,33 +692,21 @@ main.cv-container .cv-header {
 main.cv-container .cv-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-main); /* Sostituito il nero #111111 con il grigio antracite */
+  color: var(--text-main);
   margin: 0;
-}
-main.cv-container {
-  /* Layout a Due Colonne */
 }
 main.cv-container .cv-layout {
   display: flex;
   gap: 5rem;
   align-items: flex-start;
 }
-main.cv-container {
-  /* Colonna Sinistra (Sidebar Contatti/Competenze) */
-}
 main.cv-container .cv-sidebar {
   flex: 0 0 260px;
   width: 260px;
 }
-main.cv-container {
-  /* Colonna Destra (Contenuto Principale) */
-}
 main.cv-container .cv-main-content {
   flex: 1;
   min-width: 0;
-}
-main.cv-container {
-  /* Sezioni e Titoli */
 }
 main.cv-container .cv-section {
   margin-bottom: 3.5rem;
@@ -779,9 +720,6 @@ main.cv-container .cv-section-title {
   border-bottom: 1px solid #eee;
   padding-bottom: 8px;
   margin-bottom: 1.5rem;
-}
-main.cv-container {
-  /* Liste Sidebar (Contatti, Competenze, Software, Lingue) */
 }
 main.cv-container .cv-contact-list,
 main.cv-container .cv-skill-list {
@@ -797,14 +735,11 @@ main.cv-container .cv-skill-list li {
   margin-bottom: 0.6rem;
 }
 main.cv-container .cv-contact-list a {
-  color: var(--text-main); /* Sostituito il nero dei link contatti */
+  color: var(--text-main);
   text-decoration: underline;
 }
 main.cv-container .cv-contact-list a:hover {
-  color: #C86D51; /* Un bel tocco terracotta al passaggio mouse */
-}
-main.cv-container {
-  /* Singole Voci Esperienza / Formazione */
+  color: var(--oliva);
 }
 main.cv-container .cv-item {
   margin-bottom: 2.2rem;
@@ -1031,8 +966,8 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-main); /* Usa il grigio scuro antracite (#333333) ovunque */
-  font-weight: 700; /* O il peso che preferisci mantenere */
+  color: var(--text-main);
+  font-weight: 700;
   margin-top: 0;
 }
 
@@ -1047,16 +982,14 @@ main h1 {
   margin-bottom: 1.5rem;
 }
 
-/* Contenitore per centrare e staccare il pulsante */
 .back-button-container {
   width: 100%;
   display: flex;
-  justify-content: center; /* Centra orizzontalmente */
-  margin-top: 5rem; /* Distanza abbondante dalle foto sopra */
-  margin-bottom: 3rem; /* Spazio dal fondo pagina */
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
-/* Stile del pulsante (se desideri pulire anche il bordo/aspetto) */
 .back-btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;

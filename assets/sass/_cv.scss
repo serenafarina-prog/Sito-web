@@ -4,7 +4,7 @@ main.cv-container {
     padding: 160px 2rem 80px 2rem;
     box-sizing: border-box;
 
-    /* Header della Pagina */
+
     .cv-header {
         margin-bottom: 3.5rem;
         border-bottom: 1px solid #e5e5e5;
@@ -14,30 +14,29 @@ main.cv-container {
     .cv-title {
         font-size: 2.5rem;
         font-weight: 700;
-        color: var(--text-main); /* Sostituito il nero #111111 con il grigio antracite */
+        color: var(--text-main);
         margin: 0;
     }
 
-    /* Layout a Due Colonne */
+
     .cv-layout {
         display: flex;
         gap: 5rem;
         align-items: flex-start;
     }
 
-    /* Colonna Sinistra (Sidebar Contatti/Competenze) */
     .cv-sidebar {
         flex: 0 0 260px;
         width: 260px;
     }
 
-    /* Colonna Destra (Contenuto Principale) */
+
     .cv-main-content {
         flex: 1;
         min-width: 0;
     }
 
-    /* Sezioni e Titoli */
+
     .cv-section {
         margin-bottom: 3.5rem;
     }
@@ -53,7 +52,7 @@ main.cv-container {
         margin-bottom: 1.5rem;
     }
 
-    /* Liste Sidebar (Contatti, Competenze, Software, Lingue) */
+
     .cv-contact-list, 
     .cv-skill-list {
         list-style: none;
@@ -69,15 +68,15 @@ main.cv-container {
     }
 
     .cv-contact-list a {
-        color: var(--text-main); /* Sostituito il nero dei link contatti */
+        color: var(--text-main); 
         text-decoration: underline;
         
         &:hover {
-            color: #C86D51; /* Un bel tocco terracotta al passaggio mouse */
+            color: var(--oliva); 
         }
     }
 
-    /* Singole Voci Esperienza / Formazione */
+
    .cv-item {
         margin-bottom: 2.2rem;
     }
@@ -89,7 +88,7 @@ main.cv-container {
         gap: 1rem;
     }
 
-    // Specifichiamo che l'h3 con questa classe prende l'antracite delle variabili
+
     h3.cv-item-role {
         font-size: 1.1rem;
         font-weight: 600;
@@ -118,7 +117,7 @@ main.cv-container {
         margin: 0;
     }
 
-    /* Responsiveness Mobile */
+
     @media screen and (max-width: 768px) {
         padding-top: 130px;
 

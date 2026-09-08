@@ -1,8 +1,3 @@
-/* ==========================================================================
-   HOMEPAGE
-   ========================================================================== */
-
-
 
 body.home-locked {
     overflow: hidden;
@@ -10,7 +5,8 @@ body.home-locked {
     margin: 0;
 }
 
-/* Sezione Hero principale */
+
+
 .hero-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/moodboard SF.png');
     background-size: cover;
@@ -18,13 +14,13 @@ body.home-locked {
     background-repeat: no-repeat;
     height:100vh;
     display: flex;
-    align-items: flex-start;   // Riportiamo l'allineamento in alto
+    align-items: flex-start;  
     padding-top: 60vh;       
     padding-left: 8%;
     box-sizing: border-box;
     margin: 0;
 
-    /* Stili interni nidificati per i testi della Hero */
+
     .title-big {
         color: var(--bg-color);
         font-size: 3.5rem;
@@ -63,12 +59,12 @@ body.home-locked {
     max-width: 650px;
 }
 
-/* --------------------------------------------------------------------------
-   RESPONSIVE MOBILE (HOME)
-   -------------------------------------------------------------------------- */
+
+
+
 @media (max-width: 768px) {
     .hero-section {
-        padding-top: 400px; // <-- Dà lo spazio giusto sotto l'header fisso su mobile
+        padding-top: 400px; 
         padding-right: 5%;
         padding-bottom: 0;
         padding-left: 5%;

@@ -1,22 +1,23 @@
-
 .contatti-page {
     width: 100%;
     color: var(--text-main);
-      }
+}
 
-    .contatti-wrapper {
-        max-width: 1050px;
-        margin: 0 auto;
-        padding: 160px 2rem 80px 2rem;
-        box-sizing: border-box;
-    }
+.contatti-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 160px 2rem 80px 2rem;
+    box-sizing: border-box;
 
     h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #111111;
-        margin-bottom: 1rem;
+        margin: 0 0 20px 0;
     }
+
+    h2 {
+        margin: 0 0 5rem 0
+    }
+}
+
 
     .intro-text {
         font-size: 1rem;
@@ -37,25 +38,30 @@
     .contatti-sidebar {
         flex: 0 0 280px;
 
-        h2 {
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
-            margin-bottom: 0.5rem;
-        }
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0rem;
+        color: var(--terracotta);
+        padding-bottom: 8px;
+        margin-bottom: 0.5rem;
+    }
+
 
         p {
             font-size: 1rem;
-            color: #111111;
+            color: var(--text-main);
             margin-bottom: 2rem;
             line-height: 1.5;
         }
     }
 
     .social-link {
-        color: #111111;
+        color: va(--text-main);
+        font-weight: 400;
+        
         text-decoration: none;
 
         &:hover {
@@ -74,11 +80,12 @@
         flex-direction: column;
 
         label {
+            font-family: var(--font-main);
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: #666666;
+            color: var(--text-muted);
             margin-bottom: 0.4rem;
         }
 
@@ -96,6 +103,7 @@
             box-sizing: border-box;
 
             &::placeholder {
+            font-family: var(--font-main);
             color: var(--oliva);
             opacity: 1;
         } 

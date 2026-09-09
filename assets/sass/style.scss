@@ -39,22 +39,64 @@ a {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-main);
-    font-weight: 700;        
-    margin-top: 0;
+// GERARCHIA FONT //
+
+h1 {
+  margin-top: 15px;  
+  color: var(--text-main);
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0rem;
+  margin-bottom: 5px;
 }
 
-.main-header + main h1,
-main h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    text-transform: none;
-    letter-spacing: 0.05em;
-    color: var(--text-main);
-    text-align: left;
-    margin-bottom: 1.5rem;
+h2 {
+  margin-top: 0;
+  color: var(--text-main);  
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
 }
+
+h3 {
+  margin-top: -3px;
+  color: var(--text-main);  
+  font-size: 1.4rem;
+  font-weight: 550;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  margin-top: 0px;
+  color: var(--text-main);  
+  font-size: 1.2rem;
+  font-weight: 550;
+  margin-bottom: 1rem;
+}
+
+
+p {
+  font-family: var(--font-main);
+  font-size: 1rem;             
+  font-weight: 300;            
+  line-height: 1.6;            
+  color: var(--text-main);     
+  margin-bottom: 1.2rem;       
+}
+
+
+.tag {
+  font-family: var(--font-secondary); 
+  font-size: 1rem;
+  font-weight: 300; 
+  text-transform: uppercase;          
+  letter-spacing: 0.15em;             
+  color: var(--accent-color);        
+  display: block;                     
+  margin-bottom: 8px;
+}
+
+
 
 
 .back-button-container {
@@ -63,21 +105,6 @@ main h1 {
     justify-content: center; 
     margin-top: 5rem;        
     margin-bottom: 3rem;     
-}
-
-
-.back-btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    text-decoration: none;
-    color: #111111;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.back-btn:hover {
-    opacity: 0.6;
 }
 
 

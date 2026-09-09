@@ -72,6 +72,14 @@ body.portfolio-home {
     z-index: 2;
 }
 
+.block-content h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+    color: var(--bg-color);
+}
+
 .block-category {
     font-size: 0.9rem;
     font-weight: 300;
@@ -81,13 +89,6 @@ body.portfolio-home {
     opacity: 0.8;
 }
 
-.block-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    letter-spacing: -0.02em;
-    color: var(--bg-color);
-}
 
 .block-link {
     font-size: 0.85rem;
@@ -107,38 +108,32 @@ body.portfolio-home {
     max-width: 1400px;
     margin: 0 auto;
     padding: 160px 5% 80px 5%;
-}
 
-.page-intro {
-    max-width: 700px;
-    margin-bottom: 80px;
-}
+    .page-intro {
+        max-width: 700px;
+        margin-bottom: 80px;
+    }
 
-.category-tag {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--accent-color);
-    display: block;
-    margin-bottom: 12px;
-}
 
-.page-main-title {
-    font-size: 3.2rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    color: var(--text-main);
-}
+    .tag {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent-color);
+        display: block;
+        margin-bottom: 12px;
+    }
 
-.page-description {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    line-height: 1.6;
-}
+    h1 {
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        color: var(--text-main);
+    }
 
+    h2 {
+        margin: 0;
+    }
+}
 
 
 
@@ -236,21 +231,17 @@ body.portfolio-home {
     max-width: 1050px;
     margin: 0 auto;
     padding: 140px 1.5rem 2rem 1.5rem;
+    text-align: center;
 
     .project-detail-header {
         margin-bottom: 3.5rem;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
     }
 
-    .project-title {
-        font-size: 2.2rem;
-        color: #111111;
-        margin: 0.5rem 0;
-    }
-
-    .project-subtitle {
-        color: #666666;
-        font-size: 1rem;
-    }
 }
 
 .project-gallery {

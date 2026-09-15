@@ -14,34 +14,28 @@
     }
 
     h2 {
-        margin: 0 0 5rem 0
+        margin: 0 0 5rem 0;
     }
 }
 
+.intro-text {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 3.5rem;
+}
 
-    .intro-text {
-        font-size: 1rem;
-        color: #555555;
-        margin-bottom: 3.5rem;
-    }
+.contatti-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5rem;
+}
 
-
-    .contatti-grid {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 5rem;
-    }
-
-
-    .contatti-sidebar {
-        flex: 0 0 280px;
-
+.contatti-sidebar {
+    flex: 0 0 280px;
 
     h3 {
-        font-size: 1.1rem;
-        font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0rem;
         color: var(--terracotta);
@@ -49,91 +43,84 @@
         margin-bottom: 0.5rem;
     }
 
+    p {
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+}
 
-        p {
-            font-size: 1rem;
-            color: var(--text-main);
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
+.social-link {
+    color: var(--text-main);
+    font-weight: 400;
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.contatti-form-section {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-family: var(--font-main);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 0.4rem;
     }
 
-    .social-link {
-        color: va(--text-main);
-        font-weight: 400;
-        
-        text-decoration: none;
+    input,
+    textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #d1d1d1;
+        border-radius: 0;
+        padding: 0.5rem 0;
+        font-family: inherit;
+        font-size: 1rem;
+        background-color: transparent;
+        outline: none;
+        box-sizing: border-box;
 
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-
-    .contatti-form-section {
-        flex: 1;
-    }
-
-    .form-group {
-        margin-bottom: 1.5rem;
-        display: flex;
-        flex-direction: column;
-
-        label {
-            font-family: var(--font-main);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            border: none;
-            border-bottom: 1px solid #d1d1d1;
-            border-radius: 0;
-            padding: 0.5rem 0;
-            font-family: inherit;
-            font-size: 1rem;
-            background-color: transparent;
-            outline: none;
-            box-sizing: border-box;
-
-            &::placeholder {
+        &::placeholder {
             font-family: var(--font-main);
             color: var(--oliva);
             opacity: 1;
         } 
 
-            &:focus {
-                border-bottom-color: #111111;
-            }
+        &:focus {
+            border-bottom-color: #111111;
         }
     }
-
+}
 
 .btn-minimal {
-        background-color: transparent;
-        color: var(--text-main);
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+
+    &:hover {
         border: 1px solid var(--text-main);
-        display: inline-block;
-        padding: 12px 24px;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 0.85rem;
-        transition: all 0.3s ease;
-
-        &:hover {
-            border: 1px solid var(--text-main);
-            background-color: var(--oliva);
-            color: #000000;
-        }
+        background-color: var(--oliva);
+        color: #000000;
     }
-
+}
 
 @media screen and (max-width: 768px) {
     .contatti-page {

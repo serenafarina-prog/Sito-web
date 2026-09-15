@@ -1,18 +1,15 @@
-
 body.home-locked {
     overflow: hidden;
     height: 100vh;
     margin: 0;
 }
 
-
-
 .hero-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/moodboard SF.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height:100vh;
+    height: 100vh;
     display: flex;
     align-items: flex-start;  
     padding-top: 50vh;       
@@ -21,20 +18,14 @@ body.home-locked {
     margin: 0;
 
 
-    .title-big {
+    h1 {
         color: var(--bg-color);
-        font-size: 3rem;
-        font-weight: 300;
-        line-height: 1.15;
-        letter-spacing: 0.1em;
-        margin-bottom: 20px;
+        margin-bottom:5px;
     }
 
-    .hero-subtitle {
+    h2 {
         color: var(--bg-color);
-        font-size: 1.2rem;
-        font-weight: 100;
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     .btn-minimal {
@@ -57,28 +48,4 @@ body.home-locked {
 
 .hero-content {
     max-width: 650px;
-}
-
-
-
-
-@media (max-width: 768px) {
-    .hero-section {
-        padding-top: 400px; 
-        padding-right: 5%;
-        padding-bottom: 0;
-        padding-left: 5%;
-
-        .title-big { 
-            font-size: 2.2rem; 
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem; 
-        }
-    }
-
-    .logo a {
-        font-size: 1.1rem; 
-    }
 }

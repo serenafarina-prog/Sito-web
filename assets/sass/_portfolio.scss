@@ -1,4 +1,3 @@
-
 body.portfolio-home {
     overflow: hidden;
     height: 100dvh;
@@ -36,12 +35,12 @@ body.portfolio-home {
             background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
         }
 
-        .block-link {
+        // Agganciato correttamente al tag/classe che usi nell'HTML per la freccia
+        .nav-link-arrow {
             border-color: rgba(255,255,255,1);
         }
     }
 }
-
 
 .interior-block {
     background-image: url('../images/Cover/interior-cover.jpg'); 
@@ -70,39 +69,84 @@ body.portfolio-home {
     position: relative;
     color: #ffffff;
     z-index: 2;
+
+
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+        letter-spacing: -0.02em;
+        color: var(--bg-color);
+        margin-top: 0; 
+    }
+
+    .tag {
+  font-family: var(--font-secondary); 
+  font-size: 1.2rem;
+  font-weight: 300; 
+  text-transform: uppercase;          
+  letter-spacing: 0.15em;             
+  color: var(--accent-color);        
+  display: block;                     
+  margin-bottom: 8px;
+}
 }
 
-.block-content h2 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-    letter-spacing: -0.02em;
-    color: var(--bg-color);
-}
 
-.block-category {
-    font-size: 0.9rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    display: block;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-
-.block-link {
+.nav-link-arrow {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1.4px solid var(--accent-color);
     padding-bottom: 4px;
     transition: border-color 0.3s ease;
-    color: var(--bg-color);
+    display: inline-block;
+}
+
+
+@media (max-width: 768px) {
+    .portfolio-split-container {
+        margin-top: 96px;
+        height: calc(100dvh - 96px);
+        flex-direction: column;
+    }
+
+    .split-block {
+        flex: 1; 
+        height: 50%;
+        padding: 40px;
+        border-right: none;
+        border-bottom: 2px solid var(--bg-color);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            flex: 1;
+        }
+
+        .block-content {
+            .tag {
+                margin-bottom: 2px;
+                line-height: 2.2;
+            }
+            
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 5px;
+                line-height: 1.2;
+            }
+        }
+    }
 }
 
 
 
 
+
+
+// Pagina Interior e Fotografia
 
 .internal-portfolio-container {
     max-width: 1400px;
@@ -112,30 +156,28 @@ body.portfolio-home {
     .page-intro {
         max-width: 700px;
         margin-bottom: 80px;
+
+
+        h1 {
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin: 0;
+        }
     }
 
-
     .tag {
+        font-size: 1.2rem;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: var(--accent-color);
         display: block;
         margin-bottom: 12px;
     }
-
-    h1 {
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin-bottom: 20px;
-        color: var(--text-main);
-    }
-
-    h2 {
-        margin: 0;
-    }
 }
-
-
 
 .projects-grid {
     display: flex;
@@ -200,32 +242,115 @@ body.portfolio-home {
 
     .project-info {
         padding-top: 5px;
-    }
 
-    .project-year {
-        font-size: 0.8rem;
-        color: var(--accent-color);
-        font-weight: 500;
-        display: block;
-        margin-bottom: 5px;
-    }
 
-    .project-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-        letter-spacing: -0.01em;
-    }
+        .tag {
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-    .project-tech {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        font-weight: 300;
+        h3 {
+            margin-bottom: 5px;
+            letter-spacing: -0.01em;
+            margin-top: 0;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin: 0;
+        }
+    }
+}
+
+.back-button-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    margin-top: 6rem;
+    margin-bottom: 0;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    .nav-link-arrow {
+        position: static;
+        display: inline-block;
+        color: var(--text-main);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        text-decoration: none;
+        padding-bottom: 4px;
+        border-bottom: 1.3px solid var(--text-main);
+
+        &:hover {
+            opacity: 1;
+            transform: none;
+           font-weight: 450;
+            border-bottom: 1.5px solid var(--text-main); 
+        
+        }
     }
 }
 
 
 
+
+
+@media (max-width: 768px) {
+    .projects-grid {
+        .project-card {
+            &.card-small,
+            &.card-large {
+                flex: 0 0 100%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .project-image-wrapper {
+                width: 100%;
+                height: 220px;
+                aspect-ratio: unset;
+                max-height: 220px;
+            }
+        }
+    }
+
+    .back-button-container {
+        margin-top: 4rem;
+        padding: 1.5rem 1rem;
+        background-color:transparent;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: center;
+
+        .nav-link-arrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-align: center;
+            padding-bottom: 4px;
+            width: auto; 
+            white-space: nowrap;
+        }
+    }
+}
+
+
+
+
+
+
+
+// Pagina singolo progetto
 
 .project-detail-container {
     max-width: 1050px;
@@ -238,10 +363,23 @@ body.portfolio-home {
 
         h1 {
             font-size: 2.5rem;
-            font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            line-height: 1.5;
+            margin-bottom: 35px;
+            margin-top: 0;
+        }
+
+        .tag {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            display: block;
+            margin: 0;
         }
     }
-
 }
 
 .project-gallery {
@@ -274,7 +412,6 @@ body.portfolio-home {
         object-fit: cover;
         display: block;
     }
-
 
     &.full {
         width: 100%;
@@ -352,70 +489,9 @@ body.portfolio-home {
 
 
 
-
-
-
 @media (max-width: 768px) {
-
-.portfolio-split-container {
-        margin-top: 96px;
-        height: calc(100dvh - 96px);
-        flex-direction: column;
-    }
-
-    .split-block {
-        flex: 1; 
-        height: 50%;
-        padding: 40px;
-        border-right: none;
-        border-bottom: 2px solid var(--bg-color);
-
-        &:last-child {
-            border-bottom: none;
-        }
-
-        &:hover {
-            flex: 1;
-        }
-
-        .block-category {
-            margin-bottom: 2px;
-            line-height: 2.2;
-        }
-        
-        .block-title {
-            margin-bottom: 5px;
-            line-height: 1.2;
-        }
-    }
-
-    .block-title {
-        font-size: 2rem;
-    }
-
-    .projects-grid {
-        .project-card {
-            &.card-small,
-            &.card-large {
-                flex: 0 0 100%;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .project-image-wrapper {
-                width: 100%;
-                height: 220px;
-                aspect-ratio: unset;
-                max-height: 220px;
-            }
-
-            .project-img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
+    .project-detail-container {
+        padding-top: 110px;
     }
 
     .gallery-row {
@@ -447,12 +523,6 @@ body.portfolio-home {
         }
 
         &.mixed.mixed-left .img-horizontal,
-        &.mixed.mixed-right .img-horizontal {
-            margin-left: 0;
-            margin-right: 0;
-        }
-
-        &.mixed.mixed-left .img-horizontal,
         &.mixed.mixed-right .img-horizontal,
         &.triple-horizontal,
         &.quad-vertical-full {
@@ -475,49 +545,25 @@ body.portfolio-home {
             aspect-ratio: 3 / 2;
         }
     }
-}
 
 
+    .back-button-container {
+        margin-top: 4rem;
+        padding: 1.5rem 1rem;
+        background-color: transparent;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: center;
 
-
-.back-button-container {
-    position: sticky;
-    bottom: 0;
-    z-index: 100;
-    
-    width: 100%;
-    margin-top: 6rem;
-    margin-bottom: 0;
-    
-
-    padding: 0.8rem 1.5rem;
-    
-
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(12px);
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-
-}
-
-.back-btn {
-    position: static;
-    display: inline-block;
-    color: var(--text-main, #111);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    padding: 0;
-    transition: opacity 0.3s ease;
-    opacity: 0.8;
-
-    &:hover {
-        opacity: 1;
-        transform: none;
+        .nav-link-arrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-align: center;
+            padding-bottom: 4px;
+            width: auto;
+            white-space: normal;
+        }
     }
 }

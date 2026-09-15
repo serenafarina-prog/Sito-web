@@ -39,7 +39,6 @@ a {
 }
 
 
-// GERARCHIA FONT //
 
 h1 {
   margin-top: 15px;  
@@ -111,4 +110,20 @@ p {
 
 
 
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
 
+    h2 {
+        font-size: 1.1rem; 
+    }
+
+    h3 {
+        font-size: 1.1rem; 
+    }
+
+    h4 {
+        font-size: 1rem; 
+    }
+}

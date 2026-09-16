@@ -801,6 +801,7 @@ h4.cv-item-role {
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 0.1em;
+  color: var(--accent-color);
   white-space: nowrap;
 }
 

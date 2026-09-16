@@ -1,3 +1,5 @@
+// Pagina Portfolio
+
 body.portfolio-home {
     overflow: hidden;
     height: 100dvh;
@@ -35,7 +37,7 @@ body.portfolio-home {
             background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
         }
 
-        // Agganciato correttamente al tag/classe che usi nell'HTML per la freccia
+
         .nav-link-arrow {
             border-color: rgba(255,255,255,1);
         }
@@ -343,6 +345,7 @@ body.portfolio-home {
         }
     }
 }
+
 
 
 

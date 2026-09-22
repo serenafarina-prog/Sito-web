@@ -49,3 +49,170 @@ body.home-locked {
 .hero-content {
     max-width: 650px;
 }
+
+
+.home-section {
+    padding: 80px 20px;
+    background-color: #fdfbf7;
+
+    .home-content-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    // 1. Layout "Chi sono" + Foto
+    .about-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        margin-bottom: 80px;
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+
+            span {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: #777;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+
+            .divider {
+                width: 60px;
+                border: none;
+                border-top: 2px solid var(--terracotta);
+                margin-bottom: 25px;
+            }
+
+            p {
+                line-height: 1.8;
+                font-size: 1.2rem;
+                font-weight: 350;
+                margin: 0;
+            }
+            .tag {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--oliva);
+                font-size: 1rem;
+                font-weight: 400;
+                display: block;
+                margin-bottom: 10px;
+                font-family: 'Montserrat', sans-serif; // Se vuoi coerente col titolo
+            } 
+
+        }
+
+        .about-image {
+            flex: 0 0 350px;
+            text-align: center;
+
+            img {
+                width: 100%;
+                max-width: 320px;
+                height: 320px;
+                object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            }
+        }
+    }
+
+    // 2. Griglia Servizi ("Cosa faccio")
+    .home-services-header {
+        text-align: center;
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+    
+    }
+
+    .home-services-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+
+      .home-service-box {
+    display: block;          // FONDAMENTALE: trasforma il link in un blocco cliccabile
+    text-decoration: none;   // Toglie la sottolineatura classica del link
+    color: inherit;          // Mantiene il colore del testo originale
+    position: relative;      // Assicura che stia sopra ad altri livelli
+    z-index: 2;              // Lo porta in primo piano per i click
+    
+    background: #ffffff;
+    padding: 40px 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 480px;
+    border-top: 3px solid var(--terracotta);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        color: inherit;      // Evita che il testo cambi colore al passaggio del mouse
+        text-decoration: none;
+    }
+
+            h3 {
+                color: var(--text-main);
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.7;
+                margin: 0;
+            }
+        }
+    }
+
+    // 3. Sezione CTA finale
+    .home-cta {
+        max-width: 1100px;
+        margin: 80px auto 0 auto;
+   
+        padding: 60px 30px;
+        text-align: center;
+        border-radius: 4px;
+
+        strong, b {
+        font-weight: 550;
+        color: var(--text-main);
+    }
+
+
+        h2 {
+            color: var(--text-main);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        p {
+            max-width: 1000px;
+            font-size: 1.2rem;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+        }
+
+    }
+}

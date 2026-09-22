@@ -22,36 +22,18 @@
     <link rel="icon" type="image/png" href="assets/images/favicon SF.png">
 
 
-<meta property="og:title" content="Il mio Portfolio">
+
+<meta name="description" content="Serena Farina, Interior Designer e Fotografa a Torino. Scopri i progetti di arredamento, interni e scatti fotografici.">
+<meta property="og:title" content="Serena Farina | Interior Design & Fotografia">
 <meta property="og:description" content="Scopri i miei progetti di design d'interni e fotografia.">
-<meta property="og:image" content="assets/images/Interior/Un loft torinese/Un loft torinese - 11 render.jpg">
+<meta property="og:image" content="https://serenafarina-prog.github.io/Sito-web/assets/images/Interior/Un%20loft%20torinese/Un%20loft%20torinese%20-%2011%20render.jpg">
 <meta property="og:url" content="https://serenafarina-prog.github.io/Sito-web/index.html">
 <meta property="og:type" content="website">
 
+
+<script src="assets/js/menu.js" defer></script>
+
 </head>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navContainer = document.querySelector('.nav-container');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (navContainer && navLinks) {
-            // Crea il bottone e disegna le 3 linee (i 3 span) in automatico
-            const toggleBtn = document.createElement('button');
-            toggleBtn.className = 'menu-toggle';
-            toggleBtn.setAttribute('aria-label', 'Menu');
-            toggleBtn.innerHTML = '<span></span><span></span><span></span>';
-            
-            navContainer.appendChild(toggleBtn);
-
-            // Al click apre/chiude il menu e trasforma le linee in "X"
-            toggleBtn.addEventListener('click', () => {
-                toggleBtn.classList.toggle('is-active');
-                navLinks.classList.toggle('is-open');
-            });
-        }
-    });
-</script>
 
 
 <body>
@@ -82,6 +64,60 @@
         </div>
     </main>
 
+
+
+<section class="home-section">
+    <div class="home-content-wrapper">
+
+        <!-- 1. Sezione Chi sono + Foto -->
+        <div class="about-grid">
+            
+            <!-- Testo (a sinistra) -->
+            <div class="about-text">
+                <span class="tag">Benvenuti</span>
+                <h2>Chi sono</h2>
+                <hr class="divider">
+                <p>Sono <strong>Serena Farina</strong>, interior designer e fotografa. <br> La mia mission è quella di creare lo spazio giusto per te, interpretando i tuoi gusti e bisogni. Grazie alle competenze in lighting design dò il tocco finale gli ambienti. La luce mi è amica anche quando fotografo gli spazi, che ho progettato io o altri colleghi, rendendoli così fruibili a tutti.</p>
+            </div>
+
+            <!-- Foto (a destra) -->
+            <div class="about-image">
+                <img src="/assets/images/profilo SF.jpg" alt="Serena Farina">
+            </div>
+        </div>
+
+        <!-- 2. Sezione Cosa faccio (Griglia Servizi) -->
+        <div class="services-header-wrapper">
+            <div class="home-services-header">
+                <h2>Cosa faccio</h2>
+            </div>
+
+           <div class="home-services-grid">
+    
+    <!-- Box 1: Interior -->
+    <a href="portfolio/interior-design/index.html" class="home-service-box">
+        <h3>Interior & Lighting Design</h3>
+        <p>Studio la progettazione della luce e degli spazi interni per creare ambienti funzionali, armoniosi e fortemente personalizzati, curando ogni singolo aspetto estetico, tecnico e funzionale.</p>
+    </a>
+
+    <!-- Box 2: Fotografia -->
+    <a href="portfolio/photography/index.html" class="home-service-box">
+        <h3>Fotografia</h3>
+        <p>Racconto attraverso l'immagine progetti di architettura, interior e momenti di ricerca visiva, con un'attenzione particolare alle geometrie, ai dettagli e alla luce naturale.</p>
+    </a>
+
+</div>
+
+
+        <!-- 3. Sezione Call to Action Finale -->
+        <div class="home-cta">
+            <h2>Lavoriamo insieme</h2>
+            <p>Hai un progetto in mente o desideri richiedere maggiori informazioni? <br> Parliamo insieme delle <strong>tue idee</strong>!</p>
+            <a href="contacts/index.html" class="btn-minimal">Vai ai contatti &rarr;</a>
+        </div>
+
+    </div>
+</section>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

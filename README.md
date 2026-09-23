@@ -1,6 +1,4 @@
 # Sito-web
-
-# Sito-web
 # Portfolio Professionale - Serena Farina
 
 Sito web portfolio personale di Serena Farina, progettato per presentare i servizi e i progetti realizzati nei campi dell'Interior Design e della Fotografia. Il sito è strutturato per offrire un'esperienza visiva pulita, moderna e responsive.

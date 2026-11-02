@@ -17,4 +17,40 @@
                 navLinks.classList.toggle('is-open');
             });
         }
+ 
+
+    const counters = document.querySelectorAll(".stat-number");
+    const speed = 50;
+
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+        
+        const updateCount = () => {
+            const inc = target / speed;
+            count += inc;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count) + "+";
+                setTimeout(updateCount, 25);
+            } else {
+                counter.innerText = target + "+";
+            }
+        };
+
+        updateCount();
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => {
+        observer.observe(counter);
     });
+});

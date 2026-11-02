@@ -41,3 +41,10 @@ Come visualizzarlo in locale
 Se desideri visualizzare e testare il sito direttamente sul tuo computer prima della pubblicazione:
 1. Apri la cartella del progetto utilizzando il tuo editor di codice (ad esempio Visual Studio Code).
 2. Per un corretto funzionamento dei percorsi e degli script, ti basta aprire la cartella in VS Code e avviare il file principale `index.html` utilizzando un server locale (come l'estensione Live Server).
+
+
+!!!!
+LA PAGINA CV è STATA TOLTA DALLA NAVBAR IN MODO CHE NON SIA PIù VISIBILE ANCHE SE ESITE ANCORA. PER RIPRISTINARLA è NECESSARIO INSERIRE 
+<li><a href="index.html" class="active">Curriculum</a></li>
+NELLA SEZIONE HEADER DI OGNI PAGINA INDEX.HTML (DOVE ORA C'è IL COMMENTO)
+!!!!

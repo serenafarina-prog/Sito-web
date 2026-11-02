@@ -16,6 +16,7 @@ body.home-locked {
     padding-left: 8%;
     box-sizing: border-box;
     margin: 0;
+    position: relative;
 
 
     h1 {
@@ -59,6 +60,50 @@ body.home-locked {
         max-width: 1100px;
         margin: 0 auto;
     }
+ }
+
+
+    //Freccia verso il basso per scrollare
+
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    /* Sostituiamo il vecchio span con una vera freccia CSS */
+    .arrow-icon {
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        transform: rotate(45deg);
+        animation: bounceArrow 1.5s infinite;
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    }
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(8px) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+
+
 
     // 1. Layout "Chi sono" + Foto
     .about-grid {
@@ -129,7 +174,49 @@ body.home-locked {
         }
     }
 
-    // 2. Griglia Servizi ("Cosa faccio")
+
+    // 2. Sezione numeri progetti terminati
+   .stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 60px auto 80px auto;
+    padding: 40px 0;
+    max-width: 1000px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    .stat-item {
+        text-align: center;
+        flex: 1;
+        min-width: 200px;
+
+        .stat-number {
+            display: block;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--terracotta);
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            font-weight: 400;
+        }
+    }
+}
+
+
+
+    // 3. Griglia Servizi ("Cosa faccio")
     .home-services-header {
         text-align: center;
         margin-bottom: 40px;
@@ -185,7 +272,10 @@ body.home-locked {
         }
     }
 
-    // 3. Sezione CTA finale
+
+  
+
+    // 4. Sezione CTA finale
     .home-cta {
         max-width: 1100px;
         margin: 80px auto 0 auto;
@@ -215,4 +305,3 @@ body.home-locked {
         }
 
     }
-}

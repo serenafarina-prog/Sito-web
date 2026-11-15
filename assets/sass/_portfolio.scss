@@ -8,8 +8,8 @@ body.portfolio-home {
 
 .portfolio-split-container {
     display: flex;
-    margin-top: 96px; 
-    height: calc(100dvh - 96px); 
+    margin-top: 96px;
+    height: calc(100dvh - 96px);
     width: 100%;
     overflow: hidden;
     padding: 0;
@@ -142,7 +142,6 @@ body.portfolio-home {
         }
     }
 }
-
 
 
 
@@ -353,8 +352,9 @@ body.portfolio-home {
 
 
 
-// Pagina singolo progetto
-
+// ==========================================================
+// 1. PAGINA SINGOLO PROGETTO STANDARD
+// ==========================================================
 .project-detail-container {
     max-width: 1050px;
     margin: 0 auto;
@@ -362,7 +362,7 @@ body.portfolio-home {
     text-align: center;
 
     .project-detail-header {
-        margin-bottom: 3.5rem;
+        margin-bottom: 2rem;
 
         h1 {
             font-size: 2.5rem;
@@ -418,7 +418,9 @@ body.portfolio-home {
 
     &.full {
         width: 100%;
-        img, video { aspect-ratio: 3 / 2; }
+        img, video { aspect-ratio: 16/9; }
+        object-fit: cover;
+        height: auto;
     }
 
     &.double-horizontal {
@@ -437,6 +439,7 @@ body.portfolio-home {
         .img-vertical img, .img-vertical video { aspect-ratio: 2 / 3; }
     }
 
+    // Questa regola globale resta attiva SOLO per i progetti normali
     &.triple-horizontal {
         gap: 1.5rem;
         width: 100vw;
@@ -486,6 +489,315 @@ body.portfolio-home {
         }
         .img-vertical img, .img-vertical video {
             aspect-ratio: 2 / 3;
+        }
+    }
+
+    .image-caption {
+        display: block;
+        font-size: 1rem;
+        color: var(--text-muted);
+        font-family: var(--font-main);
+        margin-top: 1px;
+        letter-spacing: 0.05em;
+        text-align: center; 
+    }
+}
+
+
+// ==========================================================
+// 2. LAYOUT MACRO-PROJECT
+// ==========================================================
+
+.macro-project-layout {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 3rem 0 0;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 60px;
+    align-items: start !important; // FONDAMENTALE per lo sticky
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    overflow: visible !important;
+
+    /* A. COLONNA DI SINISTRA: SIDEBAR STICKY */
+    .project-sidebar {
+        position: fixed !important;
+        top: 350px !important;
+        left: 0rem;
+        width: 240px !important;
+        height: calc(100vh - 160px) !important;
+        max-height: calc(100vh - 140px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 20px 30px 0;
+        background-color: transparent; 
+        z-index: 100;
+        box-sizing: border-box;
+        overflow-y: auto !important;
+
+        .sidebar-header {
+            padding-left: 1.5rem;
+            h1 {
+                font-size: 1.75rem;
+                margin-bottom: 8px;
+                letter-spacing: -0.02em;
+            }
+            p {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin: 0;
+            }
+            .tag {
+                margin-bottom: 6px;
+                font-size: 0.75rem;
+            }
+        }
+
+        .project-nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 25px 0;
+            width: 100%;
+
+            .nav-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 14px 18px;
+                background-color: #f4f0ec;
+                border-radius: 0 8px 8px 0;
+                font-family: var(--font-main);
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+
+                .num {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    letter-spacing: 0.05em;
+                    color: var(--accent-color);
+                }
+
+                &:hover {
+                    background-color: #eae3dc;
+                    color: var(--text-main);
+                    transform: translateX(6px);
+                }
+
+                &.active {
+                    background-color: var(--accent-color);
+                    color: #ffffff;
+                    font-weight: 500;
+                    transform: translateX(10px);
+                    box-shadow: 4px 4px 15px rgba(0,0,0,0.08);
+
+                    .num {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        .sidebar-back {
+            padding-left: 1.5rem;
+            padding-top: 20px;
+        }
+    }
+}
+
+
+/* B. COLONNA DI DESTRA: MICRO-PROGETTI */
+.project-content-scroll {
+    margin-left: 10px;
+    grid-column: 2;
+    width: 100%;
+    max-width: 1300px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; 
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow: visible !important;
+
+    .micro-project-section {
+        width: 100%;
+        max-width: 100%;
+        scroll-margin-top: 140px;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        box-sizing: border-box;
+        
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 50px !important; 
+            margin-bottom: 0px;             
+        }
+
+        > *:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Regole specifiche per i titoli dei micro-progetti (.project-info) */
+        .project-info {
+            text-align: left;
+            margin-bottom: -1rem; // Puoi regolarlo o rimuoverlo se preferisci
+
+            .tag {
+                display: block;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.15em;
+                color: var(--accent-color);
+                font-family: var(--font-secondary, var(--font-main));
+                margin-bottom: 6px;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+                color: var(--text-main);
+                font-family: var(--font-main);
+                font-weight: 500;
+                letter-spacing: -0.02em;
+                margin-top: 0;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 1.15rem;
+                font-weight: 350;
+                color: var(--text-muted);
+                font-family: var(--font-main);
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+
+        .gallery-row {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 2.5rem;
+            align-items: stretch;
+            box-sizing: border-box;
+            margin-bottom: 0 !important;
+
+            &.full {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                img, video { 
+                    width: 100%;    
+                    height: auto;   
+                    aspect-ratio: auto; 
+                    object-fit: contain;
+                    display: block;
+                }
+            }
+
+            &.double-horizontal {
+                width: 100%;
+                gap: 1.5rem;
+                display: flex;
+                flex-direction: row;
+
+                .img-horizontal {
+                    flex: 1 1 0;
+                    min-width: 0;
+                    display: flex;
+                    flex-direction: column;
+                }
+                img, video {
+                    aspect-ratio: 16 / 10;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            &.triple-horizontal {
+                width: 100%;
+                max-width: 100%;
+                left: auto;
+                right: auto;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0;
+                gap: 1.5rem;
+                display: flex;
+                flex-direction: row;
+                box-sizing: border-box;
+
+                .img-horizontal { 
+                    flex: 1 1 0; 
+                    min-width: 0; 
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; 
+                }
+                
+                .img-horizontal img, 
+                .img-horizontal video { 
+                    aspect-ratio: 16 / 10; 
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+
+            &.triple-vertical {
+                gap: 1.5rem;
+                .img-vertical {
+                    flex: 1 1 0;
+                    min-width: 0;
+                    display: flex;
+                    flex-direction: column;
+                    img {
+                        aspect-ratio: 9/16;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        /* 1. Didascalia sotto la singola foto */
+        .image-caption {
+            display: block;
+            width: 100% !important;
+            font-size: 17px;
+            color: var(--text-muted);
+            font-family: var(--font-main);
+            margin-top: 20px;      
+            margin-bottom: 0 !important;   
+            letter-spacing: 0.05em;
+            text-align: center !important;
+        }
+
+        /* 2. Didascalia condivisa sotto l'intero blocco */
+        .image-caption.shared-caption {
+            display: block;
+            width: 100% !important;
+            font-size: 17px;
+            color: var(--text-muted);
+            font-family: var(--font-main);
+            margin-top: -20px !important;  
+            margin-bottom: 0 !important;   
+            letter-spacing: 0.05em;
+            text-align: center !important;
         }
     }
 }
@@ -549,7 +861,6 @@ body.portfolio-home {
         }
     }
 
-
     .back-button-container {
         margin-top: 4rem;
         padding: 1.5rem 1rem;
@@ -567,6 +878,29 @@ body.portfolio-home {
             padding-bottom: 4px;
             width: auto;
             white-space: normal;
+        }
+    }
+
+    /* Responsive mobile per MACRO-PROJECT / MICRO-PROJECT */
+    .macro-project-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 40px;
+
+        .project-sidebar {
+            position: relative;
+            top: 0;
+            height: auto;
+            border-right: none;
+            border-bottom: 1px solid #e5e0d8;
+            padding-bottom: 30px;
+            padding-right: 0;
+
+            .project-nav-menu {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px 25px;
+            }
         }
     }
 }

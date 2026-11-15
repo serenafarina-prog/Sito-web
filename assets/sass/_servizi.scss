@@ -56,9 +56,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: stretch;
     border-bottom: 1px solid #e5e0d8;
     padding-bottom: 60px;
+
+    
 
     &:last-child {
         border-bottom: none;
@@ -102,11 +104,15 @@
     }
 }
 
+
 .service-content {
     grid-area: content;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Occupa l'intera altezza della riga/immagine */
 
     .num {
-        font-family: 'Montserrat', sans-serif;
+        font-family: var(--font-main);
         font-size: 0.95rem;
         font-weight: 600;
         color: var(--accent-color);
@@ -116,7 +122,7 @@
     }
 
     h2 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: var(--font-main);
         font-size: 1.8rem;
         font-weight: 500;
         color: var(--text-main);
@@ -124,7 +130,7 @@
     }
 
     .lead {
-        font-family: 'Karla', sans-serif;
+        font-family: var(--font-secondary);
         font-size: 1.15rem;
         font-weight: 500;
         color: var(--oliva);
@@ -133,11 +139,17 @@
     }
 
     .text {
-        font-family: 'Karla', sans-serif;
-        font-size: 1rem;
+        font-family: var(--font-secondary);
+        font-size: 1.1rem;
         color: var(--text-muted);
         line-height: 1.7;
         margin: 0;
+    }
+
+    .service-btn-wrapper {
+       margin-top: auto; /* Spinge il pulsante in basso, allineato al bordo inferiore dell'immagine */
+        text-align: center; /* Centra il pulsante orizzontalmente rispetto al testo */
+        padding-top: 25px;  /* Distanza opzionale sopra il pulsante */
     }
 }
 
@@ -146,8 +158,9 @@
     justify-content: center;
     width: 100%;
     margin-top: 40px;        
-    margin-bottom: 30px;     
+    margin-bottom: 30px;    
 }
+
 
 
 /* Responsive Mobile */

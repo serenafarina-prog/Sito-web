@@ -5,8 +5,8 @@
   --accent-color: #9e876e; /* Colore di accento */
   --font-main: 'Montserrat', Arial, sans-serif;
   --font-secondary: 'Karla', sans-serif;
-  --terracotta: #cd826b;
-  --oliva: #89978b;
+  --terracotta: #a86951;
+  --oliva: #878974;
 }
 
 .main-header {
@@ -1214,18 +1214,7 @@ body.portfolio-home {
     padding-top: 40px;
   }
   .macro-project-layout .project-sidebar {
-    position: relative;
-    top: 0;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #e5e0d8;
-    padding-bottom: 30px;
-    padding-right: 0;
-  }
-  .macro-project-layout .project-sidebar .project-nav-menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px 25px;
+    display: none;
   }
 }
 main.cv-container {
@@ -1519,7 +1508,19 @@ h3.cv-item-role {
   max-width: 700px;
   margin-bottom: 80px;
 }
-.internal-services-container .page-intro .tag {
+.internal-services-container .page-intro h1 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.internal-services-container .page-intro h2 {
+  margin: 0;
+}
+.internal-services-container .page-intro .btn-minimal {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+.internal-services-container .tag {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1527,25 +1528,27 @@ h3.cv-item-role {
   display: block;
   margin-bottom: 12px;
 }
-.internal-services-container .page-intro h1 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  color: var(--text-color, #111111);
-}
-.internal-services-container .page-intro h2 {
-  font-size: 1.15rem;
-  font-weight: 300;
-  line-height: 1.6;
-  color: var(--text-muted, #555555);
-  margin: 0;
-  white-space: nowrap;
-}
-.internal-services-container .page-intro .btn-minimal {
-  margin-top: 40px;
-  margin-bottom: 30px;
+@media (max-width: 768px) {
+  .internal-services-container {
+    padding: 160px 5% 80px 5%;
+  }
+  .internal-services-container .page-intro {
+    max-width: 100%;
+    margin-bottom: 48px;
+  }
+  .internal-services-container .page-intro h2 {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .internal-services-container .page-intro .btn-minimal {
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    margin-bottom: 0;
+  }
 }
 
 /* Griglia dei 5 servizi a Zig-Zag */

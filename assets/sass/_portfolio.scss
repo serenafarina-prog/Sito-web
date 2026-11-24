@@ -883,24 +883,12 @@ body.portfolio-home {
 
     /* Responsive mobile per MACRO-PROJECT / MICRO-PROJECT */
     .macro-project-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 40px;
 
-        .project-sidebar {
-            position: relative;
-            top: 0;
-            height: auto;
-            border-right: none;
-            border-bottom: 1px solid #e5e0d8;
-            padding-bottom: 30px;
-            padding-right: 0;
-
-            .project-nav-menu {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 15px 25px;
-            }
-        }
+    .project-sidebar {
+        display: none;
     }
+}
 }
